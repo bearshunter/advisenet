@@ -34,9 +34,9 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public boolean delete(Long id) {
+    public boolean delete(User user) {
         try{
-            entityManager.remove(getById(id));
+            entityManager.remove(user);
         } catch (Exception ex){
             return false;
         }

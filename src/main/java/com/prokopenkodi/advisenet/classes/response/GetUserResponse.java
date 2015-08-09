@@ -8,21 +8,21 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Data
 @XmlRootElement
-public class GetUserResponse {
-    private ErrorData errorData;
+public class GetUserResponse extends BaseResponse{
+
     private User user;
 
     public GetUserResponse(ErrorData errorData, User user) {
-        this.errorData = errorData;
+        super(errorData);
         this.user = user;
     }
 
     public GetUserResponse(User user) {
-        this.errorData = new ErrorData();
+        super(new ErrorData());
         this.user = user;
     }
 
     public GetUserResponse(ErrorData errorData) {
-        this.errorData = new ErrorData();
+        super(new ErrorData());
     }
 }

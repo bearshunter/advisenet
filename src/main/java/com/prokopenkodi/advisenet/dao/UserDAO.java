@@ -8,7 +8,7 @@ public interface UserDAO {
 
     boolean update(User user);
 
-    boolean delete(Long id);
+    boolean delete(User user);
 
     User getByEmail(String email);
 
