@@ -2,12 +2,11 @@ package com.prokopenkodi.advisenet.classes.response;
 
 import com.prokopenkodi.advisenet.classes.ErrorData;
 import com.prokopenkodi.advisenet.entity.Question;
-import lombok.Data;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
-@Data
+
 @XmlRootElement
 public class GetQuestionsResponse  extends BaseResponse{
 

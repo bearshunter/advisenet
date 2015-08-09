@@ -51,7 +51,7 @@ public class QuestionBean implements QuestionAdapter {
 
     @Override
     public GetOneQuestionResponse setOpenedStatusToQuestion(Long questionId) {
-        return changeStatus(questionId, Status.OPENED);
+        return changeStatus(questionId, Status.OPEN);
     }
 
     @Override

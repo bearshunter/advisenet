@@ -49,7 +49,8 @@ public class UserBean implements UserAdapter {
 
     @Override
     public BaseResponse delete(Long userId) {
-        if (dao.update(get(userId).getUser())) {
+
+        if (dao.update(dao.getById(userId))) {
             return new BaseResponse();
         } else {
             return new BaseResponse(ErrorCode.INTERNAL_ERROR);

@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "QUESTION_STATUS")
+@Table(name = "QUESTION_TYPE")
 @Data
 public class QuestionType implements Serializable {
 

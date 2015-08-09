@@ -5,11 +5,15 @@ import com.prokopenkodi.advisenet.entity.Question;
 import com.prokopenkodi.advisenet.entity.QuestionType;
 
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Stateless
-public class QuestionDAOImpl implements QuestionDAO{
+public class QuestionDAOImpl implements QuestionDAO {
 
+    @PersistenceContext(unitName = "AdvisenetPU")
+    private EntityManager entityManager;
 
     @Override
     public boolean save(Question user) {
@@ -29,7 +33,7 @@ public class QuestionDAOImpl implements QuestionDAO{
 
     @Override
     public Question getById(Long id) {
-        return null;
+        return entityManager.createNamedQuery("Question.getById", Question.class).setParameter("id", id).getSingleResult();
     }
 
     @Override

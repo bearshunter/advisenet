@@ -2,11 +2,10 @@ package com.prokopenkodi.advisenet.classes.response;
 
 import com.prokopenkodi.advisenet.classes.ErrorData;
 import com.prokopenkodi.advisenet.entity.User;
-import lombok.Data;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-@Data
+
 @XmlRootElement
 public class GetUserResponse extends BaseResponse{
 
