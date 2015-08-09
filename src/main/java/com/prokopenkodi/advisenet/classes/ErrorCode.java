@@ -5,4 +5,5 @@ public interface ErrorCode {
     int INTERNAL_ERROR = 500;
     int NOT_FOUND = 404;
     int INVALID_PARAM = 415;
+    int DUPLICATED_PARAM = 416;
 }

@@ -1,7 +1,7 @@
 package com.prokopenkodi.advisenet.api;
 
-import com.prokopenkodi.advisenet.classes.exception.AdvisenetException;
 import com.prokopenkodi.advisenet.classes.ErrorData;
+import com.prokopenkodi.advisenet.classes.response.GetUserResponse;
 import com.prokopenkodi.advisenet.entity.User;
 
 import javax.ws.rs.*;
@@ -12,12 +12,12 @@ import javax.ws.rs.*;
 public interface UserAdapter {
     @GET
     @Path("{userID}")
-    User get(@PathParam("userID") Long userId) throws AdvisenetException;
+    GetUserResponse get(@PathParam("userID") Long userId);
 
 
     @GET
     @Path("email/{email}")
-    User getByEmail(@PathParam("email") String email) throws AdvisenetException;
+    GetUserResponse getByEmail(@PathParam("email") String email);
 
     @PUT
     ErrorData save(User user);

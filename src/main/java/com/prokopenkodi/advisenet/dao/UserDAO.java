@@ -4,11 +4,11 @@ import com.prokopenkodi.advisenet.entity.User;
 
 public interface UserDAO {
 
-    void save(User user);
+    boolean save(User user);
 
-    void update(User user);
+    boolean update(User user);
 
-    void delete(Long id);
+    boolean delete(Long id);
 
     User getByEmail(String email);
 

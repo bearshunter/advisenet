@@ -4,10 +4,7 @@ import com.prokopenkodi.advisenet.dao.UserDAO;
 import com.prokopenkodi.advisenet.entity.User;
 
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 
 @Stateless
 public class UserDAOImpl implements UserDAO {
@@ -17,18 +14,33 @@ public class UserDAOImpl implements UserDAO {
 
 
     @Override
-    public void save(User user) {
-        entityManager.persist(user);
+    public boolean save(User user) {
+        try{
+            entityManager.persist(user);
+        } catch (Exception ex){
+           return false;
+        }
+        return true;
     }
 
     @Override
-    public void update(User user) {
-        entityManager.merge(user);
+    public boolean update(User user) {
+        try{
+            entityManager.merge(user);
+        } catch (Exception ex){
+            return false;
+        }
+        return true;
     }
 
     @Override
-    public void delete(Long id) {
-        entityManager.remove(getById(id));
+    public boolean delete(Long id) {
+        try{
+            entityManager.remove(getById(id));
+        } catch (Exception ex){
+            return false;
+        }
+        return true;
 
     }
 
