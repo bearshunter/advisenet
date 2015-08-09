@@ -1,22 +1,16 @@
 package com.prokopenkodi.advisenet.dao;
 
 import com.prokopenkodi.advisenet.entity.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoOperations;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public class UserDAO implements IUserDao {
+public interface UserDAO {
 
+    void save(User user);
 
-    public UserDAO(MongoOperations mongoOps){
-        this.mongoOps=mongoOps;
-    }
+    void update(User user);
 
-    @Autowired
-    private MongoOperations mongoOps;
+    void delete(Long id);
 
-    public void save(){
-        mongoOps.save(new User());
-    }
+    User getByEmail(String email);
+
+    User getById(Long id);
 }

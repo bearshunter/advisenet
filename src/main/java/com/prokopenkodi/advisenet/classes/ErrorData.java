@@ -1,4 +1,4 @@
-package com.prokopenkodi.advisenet.rest.result;
+package com.prokopenkodi.advisenet.classes;
 
 import lombok.Data;
 
@@ -13,6 +13,16 @@ public class ErrorData {
     public ErrorData(){
         this.code = ErrorCode.SUCCESS;
         this.message = "OK";
+    }
+
+    public ErrorData(int code){
+        this.code = code;
+        this.message = "ERROR";
+    }
+
+    public ErrorData(int code, String message){
+        this.code = code;
+        this.message = message;
     }
 
 }
